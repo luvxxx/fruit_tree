@@ -1,0 +1,16 @@
+dockermodel:
+  image: template_img
+  name: template_name
+  nvidia_parameters:
+    NV_GPU: 'Null'
+  option:
+  - --rm
+  sub_parameters:
+    --gpu: 0
+    --img_dir: 'Null'
+    --img_lst_file: 'Null'
+    --out_dir: 'Null'
+  tag: v1
+  type: nvidia_docker
+  volume:
+    -v: 'Null'
