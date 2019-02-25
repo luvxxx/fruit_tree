@@ -1,10 +1,10 @@
 # --------------------------------------------------------
-# DIVA pipeline
+#  pipeline
 # Copyright (c) 2015 LTI
 # Licensed under The MIT License [see LICENSE for details]
 # --------------------------------------------------------
 
-"""Set up paths for Diva@PIPELINE."""
+"""Set up paths for @PIPELINE."""
 
 import os.path as osp
 import sys

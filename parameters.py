@@ -1,4 +1,4 @@
-# diva_parameters
+# parameters
 import os
 import sys
 import time
@@ -81,8 +81,8 @@ def checkdir(ext_frames_dir, type_str, verbose=0):
     return 2
 
 
-def creat_diva_logger(vid, mid, config):
-    '''create new logger only for diva project'''
+def creat_logger(vid, mid, config):
+    '''create new logger only for  project'''
     if not vid: vid = ''
     info = {'vid': vid, 'mid': mid}
     key = str(vid) + '_' + str(mid)
@@ -94,13 +94,13 @@ def creat_diva_logger(vid, mid, config):
         logfile = key + '.log'
         DATA_DIR = conf_dirs.get('DATA_DIR')
         config.get('FILE_CONFIG').update({'filename': logfile})
-        config.get('FILE_CONFIG').update({'name': 'diva_log_'+key})
+        config.get('FILE_CONFIG').update({'name': 'log_'+key})
         init_dir()
         logger = Guavalogger(config)
     elif config.get('FLAG') == 'DB':
         # update to VID + MID
         vidmid = key.replace('.', '_')
-        config.get('DB_CONFIG').update({'name': 'diva_log_'+ key})
+        config.get('DB_CONFIG').update({'name': 'log_'+ key})
         config.get('DB_CONFIG').update({'collection': vidmid})
         logger = Guavalogger(config)
     return logger

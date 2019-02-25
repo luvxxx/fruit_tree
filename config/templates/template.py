@@ -2,7 +2,7 @@ import sys
 import os
 import time
 sys.path.insert(0, '../..')
-from diva_parameters import conf_dirs
+from parameters import conf_dirs
 
 
 def run(video,lock):

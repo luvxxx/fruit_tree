@@ -4,11 +4,11 @@
 log:
   FLAG: 'FILE' #{DB, FILE}
   FILE_CONFIG:
-    name: 'diva_log_file'
+    name: 'log_file'
     filename: 'tst0821.log'
     directory: 'pipeline_file'
   DB_CONFIG:
-    name: 'diva_log_db'
+    name: 'log_db'
     host: '128.2.209.147'
     port: 27017
     dbname: 'pipeline_db' 
@@ -20,16 +20,16 @@ log:
 
 
 directory:
-  DATA_DIR : &DATA_DIR '/home/wenhe/diva_python/tst2017oct'
-  # DATA_DIR : &DATA_DIR '/Users/allenlwh/Dropbox/Docker/diva_pipline/data/'
+  DATA_DIR : &DATA_DIR '/home/wenhe/python/tst2017oct'
+  # DATA_DIR : &DATA_DIR '/Users/allenlwh/Dropbox/Docker/pipline/data/'
   VIDEO_DIR : &VIDEO_DIR '/tmp/test_video'
-  PREPROCESS_DIR : &PREPROCESS_DIR '/tmp/diva_preprocess'
-  PERSON_DETECT_DIR : &PERSON_DETECT_DIR '/tmp/diva_persondetect'
-  TRACK_DIR : &TRACK_DIR '/tmp/diva_tracking'
-  C3D_DIR : &C3D_DIR '/tmp/diva_c3d'
-  VLAD_DIR : &VLAD_DIR '/tmp/diva_vlad'
-  SVM_DIR : &SVM_DIR '/tmp/diva_svm'
-  DB_DIR : &DB_DIR '/tmp/diva_db'
+  PREPROCESS_DIR : &PREPROCESS_DIR '/tmp/preprocess'
+  PERSON_DETECT_DIR : &PERSON_DETECT_DIR '/tmp/persondetect'
+  TRACK_DIR : &TRACK_DIR '/tmp/tracking'
+  C3D_DIR : &C3D_DIR '/tmp/c3d'
+  VLAD_DIR : &VLAD_DIR '/tmp/vlad'
+  SVM_DIR : &SVM_DIR '/tmp/svm'
+  DB_DIR : &DB_DIR '/tmp/db'
 
 # nvida_docker parameters
 nvida_docker:
@@ -48,13 +48,13 @@ registry:
 pipeline:
   name: &PIPENAME 'pipeline_test'
   preprocess:
-    - diva_db
-    - diva_web
+    - db
+    - web
   sequence:
-    - diva_preprocess
-    - diva_persondetect
-    - diva_tracking
-    - diva_c3d
-    - diva_vlad
-    - diva_svm
+    - preprocess
+    - persondetect
+    - tracking
+    - c3d
+    - vlad
+    - svm
   parallel: True

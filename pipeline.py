@@ -5,7 +5,7 @@ import sys
 def cmd_arguments():
   parser = argparse.ArgumentParser(description='''
   functions:
-  operate DIVA pipeline.
+  operate  pipeline.
   ''', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
   parser.add_argument('--video_lst_file',dest='video_lst_file', type=str,  help='''
   the path of video list, in this file each line is the relative path of the video to the video_dir. 

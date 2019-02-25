@@ -59,8 +59,8 @@ class GuavaLogger():
             mdbhandler = MongoHandler(
                 host=DB_CONFIG['host'],
                 port=DB_CONFIG['port'],
-                database_name=DB_CONFIG.get('dbname', 'diva_pipeline_unknown'),
-                collection=DB_CONFIG.get('collection', 'diva_db_unknown')
+                database_name=DB_CONFIG.get('dbname', 'pipeline_unknown'),
+                collection=DB_CONFIG.get('collection', 'db_unknown')
                 )
             logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
             mdbhandler.setLevel(logging.DEBUG)
@@ -127,7 +127,7 @@ class GuavaLogger():
 def main():
     import sys
     import json
-    from diva_parameters import conf_log
+    from parameters import conf_log
     log_dir = conf_log['FILE_CONFIG']['directory']
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
@@ -143,7 +143,7 @@ def main():
     loggerx.logger.info(SAMPLE_LOG)
 
     # test call_shell_logging
-    image = 'diva_preprocess:v1'
+    image = 'preprocess:v1'
     cmd = ['docker', 'inspect', '--type=image'] + [image]
     success = loggerx.test_call_shell_logging(cmd, loggerx.logger)
     print(success)

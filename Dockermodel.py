@@ -248,11 +248,11 @@ class Dockermodel():
         # print('cmd=%s rc:%s, stdout:%s'%(cmd,str(rc),stdout.strip('\n').lower()))
         return stdout.strip('\n').lower() in ("true") and rc == 0
 
-    def _call_shell_logging(self, cmd, divalogger):
+    def _call_shell_logging(self, cmd, logger):
         '''
         cmd to pipe
         '''
-        logger = divalogger.logger
+        logger = logger.logger
         if not isinstance(cmd, list):
             logger.warn('callshell_logging:Exception: cmd must be a list')
             return False
@@ -280,11 +280,11 @@ class Dockermodel():
             logger.warn('callshell: finished')
         return (returncode == 0)
 
-    def _callshelldirct(self, cmd, divalogger):
+    def _callshelldirct(self, cmd, logger):
         '''
         directly call shell cmd without logging
         '''
-        logger = divalogger.logger
+        logger = logger.logger
         if isinstance(cmd, list):
             logger.info('_callshelldirct:%s' % ' '.join(cmd))
             try:
@@ -354,10 +354,10 @@ def main():
     from multiprocessing import Lock
     lock = Lock()
     video = 'MCTTR0101a.mov.deint'
-    from config.dockermodels import diva_preprocess
-    diva_preprocess.run(video, lock)
-    from config.dockermodels import diva_persondetect
-    diva_persondetect.run(video,lock)
+    from config.dockermodels import preprocess
+    preprocess.run(video, lock)
+    from config.dockermodels import persondetect
+    persondetect.run(video,lock)
 
 
 if __name__ == '__main__':

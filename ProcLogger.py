@@ -3,7 +3,7 @@ from pyswagger.contrib.client.requests import Client
 from pyswagger.utils import jp_compose
 
 ## Reading URL
-from diva_parameters import URL
+from parameters import URL
 # URL = 'http://aladdin1.inf.cs.cmu.edu:83/api/swagger.json'
 
 class ProcLogger():
