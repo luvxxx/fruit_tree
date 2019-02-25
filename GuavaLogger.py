@@ -5,9 +5,9 @@ from log4mongo.handlers import MongoHandler
 import os
 
 
-class DivaLogger():
+class GuavaLogger():
     """
-    DivaLogger
+    GuavaLogger
     """
     def __init__(self, conf_log):
         if isinstance(conf_log, dict):
@@ -131,7 +131,7 @@ def main():
     log_dir = conf_log['FILE_CONFIG']['directory']
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
-    loggerx = DivaLogger(conf_log)
+    loggerx = GuavaLogger(conf_log)
 
     # test logger
     SAMPLE_LOG = {
