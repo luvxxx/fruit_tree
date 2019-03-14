@@ -1,6 +1,5 @@
 ## demo for pipline
 ## version: v2
-## author allenlwh@gmail.com
 ## last modified 2017.10.06
 
 import time
