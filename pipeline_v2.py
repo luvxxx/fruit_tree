@@ -145,18 +145,7 @@ def testing(video_lst_file=None):
     print('Process:MAIN:PID:%d' % os.getpid())
     if not video_lst_file:
         videolist = [
-            # CAM1:
-            'MCTTR0101a.mov.deint',
-            'MCTTR0201a.mov.deint',
-            # CAM2:
-            'MCTTR0101b.mov.deint',
-            'MCTTR0101e.mov.deint',
-            # CAM3:
-            'MCTTR0203b.mov.deint',
-            'MCTTR0203e.mov.deint',
-            # CAM5:
-            'MCTTR0205g.mov.deint',
-            'MCTTR0205j.mov.deint'
+            
         ]
     else:
         videolist = init_videos_from_lst(video_lst_file)
